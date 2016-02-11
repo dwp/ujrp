@@ -4,19 +4,22 @@
       "jobTitle": "Job Title",
       "companyName": "Company",
       "minSalary": "30,000",
-      "description": "Lorem Ipsum"
+      "description": "Lorem Ipsum",
+      "jobLocation": "Leeds Bradford Airport, United Kingdom"
     },
     {
       "jobTitle": "Job Title",
       "companyName": "Company",
       "minSalary": "40,000",
-      "description": "Lorem Ipsum"
+      "description": "Lorem Ipsum",
+      "jobLocation": "Leeds Bradford Airport, United Kingdom"
     },
     {
       "jobTitle": "Job Title",
       "companyName": "Company",
       "minSalary": "50,000",
-      "description": "Lorem Ipsum"
+      "description": "Lorem Ipsum",
+      "jobLocation": "Leeds Bradford Airport, United Kingdom"
     }
   ]
 }
