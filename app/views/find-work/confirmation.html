@@ -2,6 +2,26 @@
 
 {% block content %}
 <main id="content" role="main">
-  <h1 class="heading-xlarge">Confirmation</h1>
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+		<div class="column-two-thirds">
+
+			<div class="govuk-box-highlight">
+				<h1 class="bold-large">Your application has been sent</h1>
+				<p>
+					Your reference number is<br>
+					<strong class="heading-medium">HDJ2123F</strong>
+				</p>
+			</div>
+
+			<div class="form-group">
+				<a class="button" href="/find-work/results">
+					Continue searching for work
+				</a>
+			</div>
+
+		</div>
+	</div>
 </main>
 {% endblock %}
