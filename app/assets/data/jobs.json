@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "jobTitle": "Job Title",
+      "companyName": "Company",
+      "minSalary": "30,000",
+      "description": "Lorem Ipsum"
+    },
+    {
+      "jobTitle": "Job Title",
+      "companyName": "Company",
+      "minSalary": "40,000",
+      "description": "Lorem Ipsum"
+    },
+    {
+      "jobTitle": "Job Title",
+      "companyName": "Company",
+      "minSalary": "50,000",
+      "description": "Lorem Ipsum"
+    }
+  ]
+}

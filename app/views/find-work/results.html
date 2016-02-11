@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds spacing-bottom-third">
+
+        <h2 class="heading-medium">Vacancies near you</h2>
+        <a class="button secondary" href="#">Search/filter</a>
+
+      </div>
+
+      <div class="column-third"></div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-one-whole">
+        {% for job in jobs %}
+          <div class="job">
+            <div class="float-right">
+              <p><a class="button" href="job">Find out more</a></p>
+            </div>
+            <h2 class="bold-medium">{{job.jobTitle}}</h2>
+            <p>at <span class="bold-small">{{job.companyName}}</span>, salary from <span class="bold-small">&pound;{{job.minSalary}}</span>
+              <br>{{job.description}}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+{% endblock %}
