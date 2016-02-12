@@ -1,25 +1,71 @@
 {
   "jobs": [
     {
-      "jobTitle": "Job Title",
-      "companyName": "Company",
-      "minSalary": "30,000",
-      "description": "Lorem Ipsum",
-      "jobLocation": "Leeds Bradford Airport, United Kingdom"
+      "@context": "http://schema.org",
+      "@type": "JobPosting",
+      "dateClosing": "2011-11-30",
+      "datePosted": "2011-10-31",
+      "employmentType": "Permanent, Employed",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "ABC Company Inc",
+        "contactPoint": "Jane Smith",
+        "email": "recruitment@abc.com",
+        "telephone": "0113234567",
+        "disabilityConfident": "Yes"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leeds"
+        }
+      },
+      "minSalary": "80,000",
+      "reference": "ABC123XXX",
+      "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
+      "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+      "title": "Software Engineer",
+      "workHours": "40 hours per week"
     },
     {
-      "jobTitle": "Job Title",
-      "companyName": "Company",
-      "minSalary": "40,000",
-      "description": "Lorem Ipsum",
-      "jobLocation": "Leeds Bradford Airport, United Kingdom"
-    },
-    {
-      "jobTitle": "Job Title",
-      "companyName": "Company",
-      "minSalary": "50,000",
-      "description": "Lorem Ipsum",
-      "jobLocation": "Leeds Bradford Airport, United Kingdom"
+      "@context": "http://schema.org",
+      "@type": "JobPosting",
+      "dateClosing": "2011-11-30",
+      "datePosted": "2011-10-31",
+      "description": "ABC Company Inc. seeks a full-time mid-level software engineer to develop in-house tools.",
+      "educationRequirements": "Bachelor's Degree in Computer Science, Information Systems or related fields of study.",
+      "employmentType": "Permanent, Employed",
+      "experienceRequirements": "Minumum 3 years experience as a software engineer",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "ABC Company Inc",
+        "contactPoint": "Jane Smith",
+        "email": "recruitment@abc.com",
+        "telephone": "0113234567",
+        "disabilityConfident": "Yes"
+      },
+      "incentiveCompensation": "Performance-based annual bonus plan, project-completion bonuses",
+      "industry": "Computer Software",
+      "jobBenefits": "Medical, Life, Dental",
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Leeds",
+          "addressRegion": "West Yorkshire",
+          "postalCode": "LS10 1ET"
+        }
+      },
+      "minSalary": "80,000",
+      "maxSalary": "100,000",
+      "occupationalCategory": "15-1132.00 Software Developers, Application",
+      "qualifications": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
+      "reference": "ABC123XXX",
+      "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
+      "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+      "title": "Software Developer",
+      "workHours": "40 hours per week"
     }
   ]
 }

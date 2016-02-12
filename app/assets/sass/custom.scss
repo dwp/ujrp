@@ -1,12 +1,20 @@
-.job {
+a.job {
   margin-bottom: 20px;
-  padding:15px 15px 0px 15px;
-  border:1px solid #bfc1c3;
-  background-color:#f8f8f8;
+  padding: 15px 15px 0px 15px;
+  border: 1px solid #bfc1c3;
+  background-color: #f8f8f8;
   box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-.job:last-child {
+a.job:hover {
+  background-color: darken(#f8f8f8, 5%);
+  transition: all 160ms ease-in-out;
+}
+
+a.job:last-child {
   margin-bottom: 0;
 }
 
@@ -16,4 +24,9 @@
 
 .spacing-bottom-third {
   margin-bottom: 20px;
+}
+
+.form-control {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }

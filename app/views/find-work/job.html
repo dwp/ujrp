@@ -9,113 +9,83 @@
 
       <a class="link-back" href="/find-work/results">Back</a>
 
-      <h1 class="heading-large">{{job.jobTitle}}</h1>
+      <h1 class="heading-large">
+				{{job.title}}
+			</h1>
 
-      <p class="lede">at <span class="bold-medium">{{job.companyName}}</span><br>
-      <span class="font-xsmall">Closing date: 28/2/2016 | Number of posts: 8</span>
-      </p>
+			<p class="lede">at <span class="bold-medium">{{job.hiringOrganization.name}}</span><br>
+				<span class="font-xsmall">Posted &mdash; {{job.datePosted}}</span>
+			</p>
 
-      <div class="column-half">
-        <div id="map" style="width:100%;height:160px"></div>
+      <div class="grid-row spacing-bottom-third">
+        <div class="column-half">
+          <p>{{job.jobLocation.address.addressLocality}}, {{job.jobLocation.address.addressRegion}}</p>
+        </div>
+        <div class="column-half">
+          <div id="map" style="width:100%;height:160px"></div>
+        </div>
       </div>
 
-      <div class="column-half">
-        <p class="bold-small">Get time to travel</p>
-        <p class="bold-small">
-          <div id="response"></div>
-        </p>
-      </div>
 
-      <table>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Salary</td>
-            <td class="bold-small">&pound;{{job.minSalary}}</td>
-          </tr>
-          <tr>
-            <td>Weekly hours</td>
-            <td class="bold-small">35</td>
-          </tr>
-          <tr>
-            <td>Working pattern</td>
-            <td class="bold-small">9:00-17:00</td>
-          </tr>
-          <tr>
-            <td>Type of employment</td>
-            <td class="bold-small">Permanent</td>
-          </tr>
-        </tbody>
-      </table>
+			<table>
+		    <tbody>
+		      <tr style="border-top:1px solid #bfc1c3;">
+		        <td>Salary</td>
+		        <td class="bold-small">&pound;{{job.minSalary}} {% if job.maxSalary %}&mdash; &pound;{{job.maxSalary}}{% endif %}</td>
+		      </tr>
+					<tr>
+		        <td>Incentive compensation</td>
+		        <td class="bold-small">{{job.incentiveCompensation}}</td>
+		      </tr>
+		      <tr>
+			       <td>Work hours</td>
+			       <td class="bold-small">{{job.workHours}}</td>
+		      </tr>
+		      <tr>
+		        <td>Employment type</td>
+		        <td class="bold-small">{{job.employmentType}}</td>
+		      </tr>
+					<tr>
+		        <td>Job benefits</td>
+		        <td class="bold-small">{{job.jobBenefits}}</td>
+		      </tr>
+		      <tr>
+		    </tbody>
+		  </table>
 
-      <h2 class="heading-medium">Everyday tasks</h2>
+			<h2 class="heading-medium">Responsibilities</h2>
 
-      <p>{{job.description}}</p>
+			<p>{{job.responsibilities}}</p>
 
-      <h2 class="heading-medium">Essential skills and qualities</h2>
+			<h2 class="heading-medium">Skills</h2>
 
-      <ul class="list-bullet">
-        <li>Problem solving</li>
-        <li>Communication</li>
-      </ul>
+			<p>{{job.skills}}</p>
 
-      <h2 class="heading-medium">Before you apply</h2>
+			<h2 class="heading-medium">Qualifications</h2>
 
-      <form class="form-group">
-        <fieldset>
+			<p>{{job.qualifications}}</p>
 
-          <legend class="">Do you hold a full valid driving license?</legend>
+			<h2 class="heading-medium">Experience requirements</h2>
 
-          <label class="block-label" for="answer-yes" data-target="apply-now">
-            <input type="radio" name="answer-group" value="Yes" id="answer-yes">
-            Yes
-          </label>
+			<p>{{job.experienceRequirements}}</p>
 
-          <div class="panel-indent js-hidden" id="apply-now">
-            <div class="form-group">
-              <label class="form-label-bold" for="whyApply">Why do you want to apply for this role?</label>
-              <textarea class="form-control form-control-2-3" name="whyApply" id="whyApply" rows="4"></textarea>
-            </div>
+			<h2 class="heading-medium">Education requirements</h2>
 
-            <div class="form-group">
-              <label class="form-label-bold" for="fullName">Full name</label>
-              <input type="text" name="fullName" class="form-control form-control-2-3" id="fullName">
-            </div>
+			<p>{{job.educationRequirements}}</p>
 
-            <div class="form-group">
-              <label class="form-label-bold" for="contactNumber">Contact telephone number</label>
-              <input type="text" name="contactNumber" class="form-control form-control-2-3" id="contactNumber">
-            </div>
+			<p>
+				<a class="button button-start" href="confirmation">Apply now</a>
+			</p>
 
-            <div class="form-group">
-              <label class="form-label-bold" for="contactEmail">Email address</label>
-              <input type="text" name="contactEmail" class="form-control form-control-2-3" id="contactEmail">
-            </div>
+		</div>
 
-            <div>
-              <a class="button button-start" href="confirmation">Apply now</a>
-            </div>
-          </div>
-
-          <label class="block-label" for="answer-no" data-target="criteria-not-met">
-            <input type="radio" name="answer-group" value="No" id="answer-no">
-            No
-          </label>
-
-          <div class="panel-indent js-hidden" id="criteria-not-met">
-            <p>You do not meet the criteria to apply for this job. Please speak to your work coach for more information.</p>
-          </div>
-
-        </fieldset>
-      </form>
-
+    <div class="column-third spacing-bottom-third">
+      <aside class="govuk-related-items" role="complementary">
+          <p>
+  					<a href="">Report this job</a>
+  				</p>
+      </aside>
     </div>
-
-    <div class="column-third"></div>
-  </div>
 
 </main>
 {% endblock %}
