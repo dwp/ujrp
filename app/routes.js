@@ -5,7 +5,7 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-router.all('/find-work/results', function(req, res) {
+router.get('/find-work/results', function(req, res) {
   var fs = require('fs');
   var data = fs.readFileSync(__dirname + '/assets/data/jobs.json', 'utf-8');
       data = JSON.parse(data);
