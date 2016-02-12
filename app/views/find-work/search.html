@@ -7,10 +7,29 @@
 {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+  <h1 class="heading-xlarge">Find Work</h1>
 
-  <h1 class="heading-xlarge">Search</h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="/find-work/results" class="form"  method="post">
 
-  <a class="button button-start" href="/find-work/results" role="button">Search</a>
+        <div class="form-group">
+          <label for="location" class="form-label-bold">Location</label>
+          <p class="form-hint">Town/City, Postcode or Area</p>
+          <input type="text" name="location" class="form-control form-control-2-3" id="location">
+        </div>
+
+        <div class="form-group">
+          <label for="keyword" class="form-label-bold">Keyword</label>
+          <p class="form-hint">e.g. Warehouse Manager</p>
+          <input type="text" name="keyword" class="form-control form-control-2-3" id="keyword">
+        </div>
+
+        <input type="submit" class="button" value="Search" >
+
+      </form>
+    </div>
+  </div>
 
 </main>
 {% endblock %}
