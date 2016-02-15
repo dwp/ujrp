@@ -8,7 +8,7 @@
       "employmentType": "Permanent, Employed",
       "hiringOrganization": {
         "@type": "Organization",
-        "name": "ABC Company Inc",
+        "name": "ABC Limited Company",
         "contactPoint": "Jane Smith",
         "email": "recruitment@abc.com",
         "telephone": "0113234567",
@@ -23,8 +23,8 @@
       },
       "minSalary": "80,000",
       "reference": "ABC123XXX",
-      "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
-      "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+      "responsibilities": "Design and write specifications for tools for in-house customers. Build tools according to specifications.",
+      "skills": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
       "title": "Software Engineer",
       "workHours": "40 hours per week"
     },
@@ -33,13 +33,13 @@
       "@type": "JobPosting",
       "dateClosing": "2011-11-30",
       "datePosted": "2011-10-31",
-      "description": "ABC Company Inc. seeks a full-time mid-level software engineer to develop in-house tools.",
+      "description": "ABC Limited Company. seeks a full-time mid-level software engineer to develop in-house tools.",
       "educationRequirements": "Bachelor's Degree in Computer Science, Information Systems or related fields of study.",
       "employmentType": "Permanent, Employed",
-      "experienceRequirements": "Minumum 3 years experience as a software engineer",
+      "experienceRequirements": "Minumum 3 years experience as a software engineer.",
       "hiringOrganization": {
         "@type": "Organization",
-        "name": "ABC Company Inc",
+        "name": "ABC Limited Company",
         "contactPoint": "Jane Smith",
         "email": "recruitment@abc.com",
         "telephone": "0113234567",
@@ -60,12 +60,70 @@
       "minSalary": "80,000",
       "maxSalary": "100,000",
       "occupationalCategory": "15-1132.00 Software Developers, Application",
-      "qualifications": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
+      "qualifications": "Web application development using Java/J2EE. Web application development using Python or familiarity with dynamic programming languages.",
       "reference": "ABC123XXX",
-      "responsibilities": "Design and write specifications for tools for in-house customers Build tools according to specifications",
-      "skills": "Web application development using Java/J2EE Web application development using Python or familiarity with dynamic programming languages",
+      "responsibilities": "Design and write specifications for tools for in-house customers. Build tools according to specifications.",
+      "skills": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
       "title": "Software Developer",
       "workHours": "40 hours per week"
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "JobPosting",
+      "dateClosing": "2016-3-30",
+      "datePosted": "2011-10-31",
+      "employmentType": "Permanent, Employed",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Finance Group",
+        "contactPoint": "Jane Smith",
+        "email": "recruitment@finance.com",
+        "telephone": "0113234567",
+        "disabilityConfident": "Yes"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sheffield",
+          "addressRegion": "West Yorkshire"
+        }
+      },
+      "minSalary": "15,008",
+      "maxSalary": "15,841",
+      "reference": "ABC123XXX",
+      "responsibilities": "After a customer agrees a mortgage with Lloyds Banking Group, you’ll be the friendly voice at the end of the phone, ready to answer their queries about payments, statements and more.",
+      "skills": "Great communication. Computer confident. Data analysis.",
+      "title": "Customer Service Adviser",
+      "workHours": "30-40 hours per week. Shifts between Mon-Sat. 0800-2000 5 days per week. 4-10 hour shifts. One Saturday per two weeks."
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "JobPosting",
+      "dateClosing": "2016-3-30",
+      "datePosted": "2011-10-31",
+      "employmentType": "Temporary, Employed",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Food Eat Yum",
+        "contactPoint": "Jane Smith",
+        "email": "recruitment@food.com",
+        "telephone": "0113234567",
+        "disabilityConfident": "Yes"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London"
+        }
+      },
+      "minSalary": "8 per hour",
+      "reference": "ABC123XXX",
+      "responsibilities": "Deliver food to our amazing customers with a smile.",
+      "skills": "Safe and reliable driver.",
+      "title": "Delivery Driver",
+      "workHours": "Nights"
     }
   ]
 }
