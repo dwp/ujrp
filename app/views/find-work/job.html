@@ -13,30 +13,42 @@
 				{{job.title}}
 			</h1>
 
-			<p class="lede">at <span class="bold-medium">{{job.hiringOrganization.name}}</span><br>
-				<span class="font-xsmall">Posted &mdash; {{job.datePosted}}</span>
+			<p class="lede">
+        at <span class="bold-medium">{{job.hiringOrganization.name}}</span>
 			</p>
+
+      {% if job.jobLocation.address.postalCode %}
 
       <div class="grid-row spacing-bottom-third">
         <div class="column-half">
-          <p>{{job.jobLocation.address.addressLocality}}, {{job.jobLocation.address.addressRegion}}</p>
+          <p class="bold-small">{{job.jobLocation.address.addressLocality}}{% if job.jobLocation.address.addressRegion %}, {{job.jobLocation.address.addressRegion}}{% endif %}</p>
         </div>
         <div class="column-half">
-          <div id="map" style="width:100%;height:160px"></div>
+          <img style="border:1px solid #bfc1c3;" src="http://maps.googleapis.com/maps/api/staticmap?center={{job.jobLocation.address.postalCode}}&size=300x160&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyAW0Ohl8tjseWY_hYLUs-3itKSZ055yTJQ">
+          <!--<div id="map" style="width:100%;height:160px"></div>-->
         </div>
       </div>
 
+      {% endif %}
 
 			<table>
 		    <tbody>
-		      <tr style="border-top:1px solid #bfc1c3;">
+          <tr style="border-top:1px solid #bfc1c3;">
+            {% if not job.jobLocation.address.postalCode %}
+		        <td>Location</td>
+		        <td class="bold-small">{{job.jobLocation.address.addressLocality}}{% if job.jobLocation.address.addressRegion %}, {{job.jobLocation.address.addressRegion}}{% endif %}</td>
+		      </tr>
+		      <tr>
+            {% endif %}
 		        <td>Salary</td>
 		        <td class="bold-small">&pound;{{job.minSalary}} {% if job.maxSalary %}&mdash; &pound;{{job.maxSalary}}{% endif %}</td>
 		      </tr>
+          {% if job.incentiveCompensation %}
 					<tr>
 		        <td>Incentive compensation</td>
 		        <td class="bold-small">{{job.incentiveCompensation}}</td>
 		      </tr>
+          {% endif %}
 		      <tr>
 			       <td>Work hours</td>
 			       <td class="bold-small">{{job.workHours}}</td>
@@ -45,11 +57,16 @@
 		        <td>Employment type</td>
 		        <td class="bold-small">{{job.employmentType}}</td>
 		      </tr>
+          {% if job.jobBenefits %}
 					<tr>
 		        <td>Job benefits</td>
 		        <td class="bold-small">{{job.jobBenefits}}</td>
 		      </tr>
-		      <tr>
+          {% endif %}
+          <tr>
+		        <td>Closing date</td>
+		        <td class="bold-small">{{job.dateClosing}}</td>
+		      </tr>
 		    </tbody>
 		  </table>
 
@@ -61,17 +78,29 @@
 
 			<p>{{job.skills}}</p>
 
+      {% if job.qualifications %}
+
 			<h2 class="heading-medium">Qualifications</h2>
 
 			<p>{{job.qualifications}}</p>
+
+      {% endif %}
+
+      {% if job.experienceRequirements %}
 
 			<h2 class="heading-medium">Experience requirements</h2>
 
 			<p>{{job.experienceRequirements}}</p>
 
+      {% endif %}
+
+      {% if job.educationRequirements %}
+
 			<h2 class="heading-medium">Education requirements</h2>
 
 			<p>{{job.educationRequirements}}</p>
+
+      {% endif %}
 
 			<p>
 				<a class="button button-start" href="confirmation">Apply now</a>
@@ -92,11 +121,12 @@
 
 {% block body_end %}
 {% include "includes/scripts.html" %}
-
+<!--
 <script>
 	var userLocation = 'Leeds, United Kingdom';
 	var jobLocation = '{{job.jobLocation}}';
 </script>
 <script src="/public/javascripts/travel-map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW0Ohl8tjseWY_hYLUs-3itKSZ055yTJQ&callback=initMap" async defer></script>
+-->
 {% endblock %}
