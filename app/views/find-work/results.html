@@ -21,7 +21,7 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         {% for job in jobs %}
-        <a class="job" href="job">
+        <a class="job" href="job/{{loop.index0}}">
           <div>
             <h2 class="bold-medium">
               {{job.title}}

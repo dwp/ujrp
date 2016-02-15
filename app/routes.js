@@ -13,12 +13,12 @@ router.get('/find-work/results', function(req, res) {
   res.render('find-work/results', {jobs: data.jobs});
 });
 
-router.get('/find-work/job', function(req, res) {
+router.get('/find-work/job/:id', function(req, res) {
   var fs = require('fs');
   var data = fs.readFileSync(__dirname + '/assets/data/jobs.json', 'utf-8');
       data = JSON.parse(data);
 
-  res.render('find-work/job', {job: data.jobs[0]});
+  res.render('find-work/job', {job: data.jobs[req.params.id]});
 });
 
 // Example route: Passing data into a page
