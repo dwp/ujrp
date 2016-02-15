@@ -1,8 +1,11 @@
 $('input[type=submit]').on('click', function(e) {
   var form = $(".form");
-  var inputVal = $("#radio-home-address").val();
+  var inputVal = $("input:radio[name=radio-indent-group]:checked").val();
 
   if(inputVal == "Yes") {
+    $("input[type=submit]").toggle();
+    $(".loading").toggle();
+
     navigator.geolocation.getCurrentPosition(function(position) {
       var location = {};
           location.lat = position.coords.latitude;
