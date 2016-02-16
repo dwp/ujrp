@@ -20,12 +20,11 @@
       {% if job.jobLocation.address.postalCode %}
 
       <div class="grid-row spacing-bottom-third">
-        <div class="column-half">
+        <div class="column-third">
           <p class="bold-small">{{job.jobLocation.address.addressLocality}}{% if job.jobLocation.address.addressRegion %}, {{job.jobLocation.address.addressRegion}}{% endif %}</p>
         </div>
-        <div class="column-half">
-          <img style="border:1px solid #bfc1c3;" src="http://maps.googleapis.com/maps/api/staticmap?center={{job.jobLocation.address.postalCode}}&size=300x160&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyAW0Ohl8tjseWY_hYLUs-3itKSZ055yTJQ">
-          <!--<div id="map" style="width:100%;height:160px"></div>-->
+        <div class="column-two-thirds">
+          <div id="map" style="width:100%;height:160px;border:1px solid #bfc1c3;"></div>
         </div>
       </div>
 
@@ -121,12 +120,135 @@
 
 {% block body_end %}
 {% include "includes/scripts.html" %}
-<!--
+
 <script>
-	var userLocation = 'Leeds, United Kingdom';
-	var jobLocation = '{{job.jobLocation}}';
+function initMap() {
+  var customMapType = new google.maps.StyledMapType([
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.icons",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ffdf8e"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#33bbff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ffce5b"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "weight": "0.9"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+], {
+      name: 'Custom Style'
+  });
+  var customMapTypeId = 'custom_style';
+
+  var position = {};
+
+  $.ajax({
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?address={{job.jobLocation.address.postalCode}} , UK'
+    })
+    .done(function(data) {
+      position.lat = data.results[0].geometry.location.lat;
+      position.lng = data.results[0].geometry.location.lng;
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: new google.maps.LatLng(position.lat, position.lng),  // Leeds.
+        mapTypeControlOptions: {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+        }
+      });
+
+      var icon = {
+        url: '/public/images/pin.png',
+        scaledSize: new google.maps.Size(26, 36),
+      }
+
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(position.lat, position.lng),
+        map: map,
+        icon: icon,
+        animation: google.maps.Animation.DROP,
+        title: ''
+      });
+      marker.addListener('click', toggleBounce);
+      map.mapTypes.set(customMapTypeId, customMapType);
+      map.setMapTypeId(customMapTypeId);
+  });
+}
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
 </script>
-<script src="/public/javascripts/travel-map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW0Ohl8tjseWY_hYLUs-3itKSZ055yTJQ&callback=initMap" async defer></script>
--->
+
 {% endblock %}
