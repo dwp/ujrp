@@ -19,13 +19,9 @@
 
       {% if job.jobLocation.address.postalCode %}
 
-      <div class="grid-row spacing-bottom-third">
-        <div class="column-third">
-          <p class="bold-small">{{job.jobLocation.address.addressLocality}}{% if job.jobLocation.address.addressRegion %}, {{job.jobLocation.address.addressRegion}}{% endif %}</p>
-        </div>
-        <div class="column-two-thirds">
-          <div id="map" style="width:100%;height:160px;border:1px solid #bfc1c3;"></div>
-        </div>
+      <div class="map-container">
+        <div id="map" style="width:100%;height:160px;border:1px solid #bfc1c3;position:relative;"></div>
+        <p class="bold-small map-location">{{job.jobLocation.address.addressLocality}}{% if job.jobLocation.address.addressRegion %}, {{job.jobLocation.address.addressRegion}}{% endif %}</p>
       </div>
 
       {% endif %}
@@ -125,6 +121,15 @@
 function initMap() {
   var customMapType = new google.maps.StyledMapType([
     {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
         "featureType": "road",
         "elementType": "all",
         "stylers": [
@@ -138,37 +143,10 @@ function initMap() {
     },
     {
         "featureType": "road",
-        "elementType": "labels.text",
+        "elementType": "labels",
         "stylers": [
             {
                 "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.icons",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#ffdf8e"
             }
         ]
     },
@@ -177,28 +155,7 @@ function initMap() {
         "elementType": "all",
         "stylers": [
             {
-                "color": "#33bbff"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#ffce5b"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "weight": "0.9"
-            },
-            {
-                "visibility": "off"
+                "color": "#005ea5"
             }
         ]
     }
@@ -210,7 +167,7 @@ function initMap() {
   var position = {};
 
   $.ajax({
-      url: 'https://maps.googleapis.com/maps/api/geocode/json?address={{job.jobLocation.address.postalCode}} , UK'
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?address={{job.jobLocation.address.postalCode}}'
     })
     .done(function(data) {
       position.lat = data.results[0].geometry.location.lat;
@@ -218,6 +175,8 @@ function initMap() {
 
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
+        zoomControl: true,
+        scrollwheel: false,
         center: new google.maps.LatLng(position.lat, position.lng),  // Leeds.
         mapTypeControlOptions: {
           mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
