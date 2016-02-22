@@ -21,7 +21,7 @@
           "addressLocality": "Leeds"
         }
       },
-      "minSalary": "80,000",
+      "minSalary": "60,000",
       "reference": "ABC123XXX",
       "responsibilities": "Design and write specifications for tools for in-house customers. Build tools according to specifications.",
       "skills": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
@@ -33,8 +33,8 @@
       "@type": "JobPosting",
       "dateClosing": "2011-11-30",
       "datePosted": "2011-10-31",
-      "description": "ABC Limited Company. seeks a full-time mid-level software engineer to develop in-house tools.",
-      "educationRequirements": "Bachelor's Degree in Computer Science, Information Systems or related fields of study.",
+      "description": "ABC Limited Company, seeks a full-time mid-level software engineer to develop in-house tools.",
+      "educationRequirements": "Masters in Computer Science, Information Systems or related fields of study.",
       "employmentType": "Permanent, Employed",
       "experienceRequirements": "Minumum 3 years experience as a software engineer.",
       "hiringOrganization": {
@@ -47,7 +47,7 @@
       },
       "incentiveCompensation": "Performance-based annual bonus plan, project-completion bonuses",
       "industry": "Computer Software",
-      "jobBenefits": "Medical, Life, Dental",
+      "jobBenefits": "Bupa, Pension, Gym membership",
       "jobLocation": {
         "@type": "Place",
         "address": {
@@ -64,7 +64,7 @@
       "reference": "ABC123XXX",
       "responsibilities": "Design and write specifications for tools for in-house customers. Build tools according to specifications.",
       "skills": "Ability to work in a team environment with members of varying skill levels. Highly motivated. Learns quickly.",
-      "title": "Software Developer",
+      "title": "Senior Software Engineer",
       "workHours": "40 hours per week"
     },
     {
