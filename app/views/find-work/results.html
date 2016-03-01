@@ -5,21 +5,13 @@
     {% include "includes/phase_banner_alpha.html" %}
 
     <div class="grid-row">
-      <div class="column-two-thirds spacing-bottom-third">
-        <h2 class="heading-large">{{jobs.length + 1}} jobs match your search</h2>
-      </div>
-
-      <div class="column-third spacing-bottom-third">
-        <aside class="govuk-related-items" role="complementary">
-          <p>
-            <a class="button" href="">Refine search</a>
-          </p>
-        </aside>
-      </div>
-    </div>
-
-    <div class="grid-row">
       <div class="column-two-thirds">
+        <h2 class="heading-large">{{jobs.length + 1}} jobs match your search</h2>
+
+          <p>
+            <a class="" href="">Refine search</a>
+          </p>
+
         {% for job in jobs %}
         <div class="job">
           <a href="job/{{loop.index0}}">
