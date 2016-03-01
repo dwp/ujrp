@@ -1,21 +1,27 @@
-a.job {
+div.job, div.job-external {
   margin-bottom: 20px;
   padding: 15px 15px 0px 15px;
   border: 1px solid #bfc1c3;
-  background-color: #f8f8f8;
+  background-color: #005ea5;
   box-sizing: border-box;
   display: block;
   text-decoration: none;
+  color: white;
+}
+div.job a {
+  text-decoration: none;
   color: inherit;
 }
-
-a.job:hover {
-  background-color: darken(#f8f8f8, 5%);
+div.job:hover {
+  background-color: darken(#005ea5, 5%);
   transition: all 160ms ease-in-out;
 }
-
-a.job:last-child {
+div.job:last-child {
   margin-bottom: 0;
+}
+div.job-external {
+  background-color: #f8f8f8;
+  color: inherit;
 }
 
 .float-right {
@@ -35,6 +41,7 @@ a.job:last-child {
   width:100%;
   height:160px;
   border:1px solid #bfc1c3;
+  position: relative;
 }
 
 .map-container {
@@ -46,10 +53,10 @@ a.job:last-child {
   background: white;
   padding: 10px;
   position: absolute;
-  z-index: 999;
+  z-index: 8;
   top: 5px;
   left: 10px;
-  border: 1px solid grey;
+  border: 1px solid #bfc1c3;
 }
 
 .loading {
