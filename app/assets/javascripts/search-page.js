@@ -23,7 +23,7 @@ $('input[type=submit]').on('click', function(e) {
 
           form.submit();
         }, function(error) {
-          alert('Please enter your location manually');
+          //alert('Please enter your location manually');
         });
     });
   } else {
