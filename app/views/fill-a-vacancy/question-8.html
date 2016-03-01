@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="question-7">Back</a>
+
+			<h1 class="heading-large">
+				Skills
+			</h1>
+
+			<form class="form" action="question-9" method="">
+
+				<div class="form-group">
+					<label class="visuallyhidden" for="skills">Skills</label>
+          <p class="form-hint">Skills and personal qualities required to fulfill this role.</p>
+					<input type="text" class="tag-value form-control form-control-2-3" name="skills">
+					<p id="addInput"><a href="#" >+ add another</a></p>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block body_end %}
+{% include "includes/scripts.html" %}
+
+<script>
+		$("p#addInput a").click(function() {
+			$("p#addInput").before("<input type=\"text\" class=\"tag-value form-control form-control-2-3\" name=\"skills\">");
+		});
+</script>
+
+{% endblock %}

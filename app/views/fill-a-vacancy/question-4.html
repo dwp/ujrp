@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="question-3">Back</a>
+
+			<h1 class="heading-large">
+				Salary
+			</h1>
+
+			<form class="form" action="question-5" method="">
+
+        <div class="form-group">
+          <label class="form-label-bold" for="minSalary">The minimum salary for the job</label>
+          <input type="text" name="minSalary" class="form-control form-control-2-3" id="minSalary">
+        </div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}

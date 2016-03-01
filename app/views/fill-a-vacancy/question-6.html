@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="question-5">Back</a>
+
+			<h1 class="heading-large">
+				Employment type
+			</h1>
+
+			<form class="form" action="question-7" method="">
+
+        <div class="form-group">
+          <fieldset name="employmentType" id="employmentType">
+            <legend class="visuallyhidden">Type of employment</legend>
+            <label class="block-label" for="employmentTypePermanent">
+              <input id="employmentTypePermanent" type="radio" name="employmentType" value="Permanent">
+              Permanent
+            </label>
+            <label class="block-label" for="employmentTypeTemporary">
+              <input id="employmentTypeTemporary" type="radio" name="employmentType" value="Temporary">
+              Temporary
+            </label>
+            <label class="block-label" for="employmentTypeContract" data-target="otherType">
+              <input id="employmentTypeContract" type="radio" name="employmentType" value="Other">
+              Other
+            </label>
+            <div class="panel-indent js-hidden" id="otherType">
+              <p class="form-hint">Manually enter the employment type</p>
+              <input type="text" name="employmentType" class="form-control form-control-2-3">
+            </div>
+
+          </fieldset>
+        </div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}

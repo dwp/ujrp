@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="question-4">Back</a>
+
+			<h1 class="heading-large">
+				Hours
+			</h1>
+
+			<form class="form" action="question-6" method="">
+
+        <div class="form-group">
+          <label class="form-label-bold" for="workHours">The total weekly working hours</label>
+          <input type="text" name="workHours" class="form-control form-control-2-3" id="workHours">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="workingPattern">The typical working pattern</label>
+          <p class="form-hint">For example, 1st shift, night shift, 8am-5pm</p>
+          <input type="text" name="workingPattern" class="form-control form-control-2-3" id="workingPattern">
+        </div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}

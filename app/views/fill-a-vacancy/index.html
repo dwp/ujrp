@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="breadcrumbs">
+		<ol role="breadcrumbs">
+			<li><a href="/">Home</a></li>
+			<li>Fill a vacancy</li>
+		</ol>
+	</div>
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+
+			<h1 class="heading-xlarge">
+				Fill a vacancy
+			</h1>
+
+			<p>Use this service to:</p>
+
+			<ul class="list-bullet">
+				<li>upload a vacancy</li>
+				<li>receive applications from claimants of Universal Credit</li>
+				<li>book interview facilities</li>
+				<li>connect with your local employer advisor.</li>
+			</ul>
+
+			<h2 class="heading-medium">Before you start</h2>
+
+      <p>You need to have an existing relationship with your local Jobcentre Plus and an Employer ID to use this service.</p>
+
+			<p>
+				<a class="button button-start" href="question-1" role="button">Start now</a>
+				<br>
+				<span class="font-xsmall">and upload a vacancy</span>
+			</p>
+
+		</div>
+
+		<div class="column-third">
+
+      <div class="related-links">
+        <h2 class="heading-medium">Related links</h2>
+
+        <ul class="font-xsmall">
+          <li><a href="/find-work/">Find work</a></li>
+          <li><a href="/share-labour-market-knowledge/">Share local labour market knowledge</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<div class="govuk-box-highlight">
+				<h1 class="bold-large">Your vacancy has been sent</h1>
+				<p>
+					Your reference number is<br>
+					<strong class="heading-medium">HDJ2123F</strong>
+				</p>
+			</div>
+
+			<h2 class="heading-medium">What happens next</h2>
+			<p>Your job posting will be live within 1-2 hours, subject to our standard fraud and equality checks.</p>
+			<p>If required, we will contact you for more information.</p>
+
+			<div class="form-group">
+				<a class="button secondary" href="index">
+					Return to start page
+				</a>
+				<a class="button" href="full-form">
+					Upload another vacancy
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}

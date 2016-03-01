@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="question-6">Back</a>
+
+			<h1 class="heading-large">
+				Responsibilities
+			</h1>
+
+			<form class="form" action="question-8" method="">
+
+        <div class="form-group">
+          <label class="visuallyhidden" for="responsibilities">Responsibilities</label>
+          <p class="form-hint">Detail the responsibilities and day-to-day tasks associated with this role.</p>
+          <textarea name="responsibilities" class="form-control form-control-2-3" id="responsibilities" rows="4"></textarea>
+        </div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}

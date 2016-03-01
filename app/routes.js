@@ -29,4 +29,12 @@ router.get('/find-work/job/:id/data', function(req, res) {
   res.json(data.jobs[req.params.id]);
 });
 
+router.get('/fill-a-vacancy/review-job', function(req, res) {
+  var fs = require('fs');
+  var data = fs.readFileSync(__dirname + '/assets/data/jobs.json', 'utf-8');
+      data = JSON.parse(data);
+
+  res.render('fill-a-vacancy/review-job', {job: data.jobs[0]});
+});
+
 module.exports = router;

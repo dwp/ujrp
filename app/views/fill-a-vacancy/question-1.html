@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Fill a vacancy - UJRP
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<a class="link-back" href="index">Back</a>
+
+			<h1 class="heading-large">
+				Job title
+			</h1>
+
+			<form class="form" action="question-2" method="">
+
+				<div class="form-group">
+					<label class="form-label-bold" for="jobTitle">What is the job title?</label>
+					<input type="text" name="jobTitle" class="form-control form-control-2-3" id="jobTitle">
+			  </div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Continue">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
