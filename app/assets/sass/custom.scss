@@ -1,27 +1,23 @@
-div.job, div.job-external {
+div.job {
   margin-bottom: 20px;
   padding: 15px 15px 0px 15px;
   border: 1px solid #bfc1c3;
-  background-color: #005ea5;
+  background-color: #f8f8f8;
   box-sizing: border-box;
   display: block;
   text-decoration: none;
-  color: white;
+  color: inherit;;
 }
 div.job a {
   text-decoration: none;
   color: inherit;
 }
 div.job:hover {
-  background-color: darken(#005ea5, 5%);
+  background-color: darken(#f8f8f8, 5%);
   transition: all 160ms ease-in-out;
 }
 div.job:last-child {
   margin-bottom: 0;
-}
-div.job-external {
-  background-color: #f8f8f8;
-  color: inherit;
 }
 
 .float-right {
